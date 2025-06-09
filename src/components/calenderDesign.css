@@ -1,0 +1,160 @@
+
+*{
+      margin: 5px;
+      font-size: medium;
+      font-family: cursive;
+      align-items: center;
+      text-align: center;
+      }
+      
+     
+      table{
+            width: 95%; 
+      }
+      td{
+            border: 3px solid teal;
+             height: 70vh;
+              width: 13%; 
+      }
+     
+      
+      .buttons button{
+          border:3px solid rgba(0, 128, 128, 0);
+          color: teal;
+           width: 13%;
+           padding:10px; 
+           background-color:  rgba(177, 238, 238, 0);
+           font-size: xx-large;
+      }
+      input{
+            height: 10vh;
+            width: 60%;
+            align-items: center;
+            border:3px solid rgba(0, 128, 128, 0.826);
+            color: teal;
+            padding:15px; 
+            background-color:  rgba(177, 238, 238, 0);
+      }
+      .smallInputs{
+        height: 4vh;
+            width: 20%;
+            align-items: center;
+            border:3px solid rgba(0, 128, 128, 0.826);
+            color: teal;
+            padding:15px; 
+            background-color:  rgba(177, 238, 238, 0);
+      }
+      button{
+            height: 10vh;
+            width: 40%;
+            align-items: center;
+            border:3px solid rgba(0, 128, 128, 0.826);
+            color: rgb(238, 243, 243);
+            padding:15px; 
+            background-color:  rgba(177, 238, 238, 0);
+      }
+      .close{
+            width: 50px;
+            height: 50px;
+            color: red;
+            text-align: center;
+            padding: 0%;
+            font-size: x-large;
+      }
+      
+       .today{
+      background-color: teal;
+       }
+       .menuButton{
+            width: 170px;height: 50px;font-size: large;margin-top: 0%;
+       }
+       .menuButton:hover{
+        background-color: rgb(96, 161, 161);
+       }
+       .meetingOnDay{
+            border: 4px teal solid;
+            border-radius: 10%;
+            background-color: rgba(4, 143, 143, 0.312);
+       }
+       .taskOnDay{
+        border: 4px yellow solid;
+        border-radius: 10%;
+        background-color: rgb(192, 192, 82);
+   }
+       .meetingOnMonthDay{
+        border: 2px teal solid;
+        border-radius: 10%;
+        background-color: rgba(4, 143, 143, 0.312);
+        font-size:12px;
+        margin: 4px;
+   }
+   .taskOnMonthDay{
+    border: 2px yellow solid;
+    border-radius: 10%;
+    background-color: rgb(228, 228, 98);
+    font-size:12px;
+    margin: 4px;
+}
+       .dayOfMonth{
+            height: 19%;
+              border: 3px solid crimson;
+            height: 12.5vh;
+            width: 12%;
+            font-size:12px;
+            margin: 3px;
+       }
+       .logIn,.logIn::placeholder{
+            color: rgba(0, 0, 0, 0.651);
+            font-size: x-large;
+       }
+      h1,th{
+          font-size: x-large;
+      } 
+      .styled-select {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #007BFF;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 16px;
+          font-family: Arial, sans-serif;
+      }
+      
+      .styled-select option {
+          font-size: 16px;
+          font-family: Arial, sans-serif;
+      }
+      .centered-dialog {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border: none;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          background-color: white;
+          z-index: 1000;
+          animation: fadeIn 0.5s ease-in-out;
+      }
+      
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              transform: translate(-50%, -60%);
+          }
+          to {
+              opacity: 1;
+              transform: translate(-50%, -50%);
+          }
+      }
+      .dialogButton {
+          height: 10vh;
+          width: 40%;
+          align-items: center;
+          border:3px solid rgba(0, 128, 128, 0.826);
+          color: rgb(20, 26, 26);
+          padding:15px; 
+          background-color:  rgba(177, 238, 238, 0);
+      }
