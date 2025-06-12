@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const logInThunk = createAsyncThunk(
     'logIn', 
     async (details) => {
-    const res = await fetch('http://https://mycalenderbackend.onrender.com/login', {
+    const res = await fetch('https://mycalenderbackend.onrender.com/login', {
         method: 'POST',
         body: JSON.stringify(details),
         headers: {

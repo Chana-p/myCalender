@@ -5,7 +5,7 @@ export const getmeetingsThunk = createAsyncThunk(
    async ({Id}) => {
       console.log(Id);
        
-       const res = await fetch(`http://https://mycalenderbackend.onrender.com/meetings/${Id}`);
+       const res = await fetch(`https://mycalenderbackend.onrender.com/meetings/${Id}`);
       
 
        if (res.ok) {
