@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const deletemeetingThunk = createAsyncThunk(
     'deletemeeting', 
     async ({ token, meetingId }) => {
-        const res = await fetch(`http://localhost:1234/meeting/${token}/${meetingId}`, {
+        const res = await fetch(`http://https://mycalenderbackend.onrender.com/meeting/${token}/${meetingId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const addUserThunk = createAsyncThunk(
     'logOn', 
     async (details) => {
-    const res = await fetch('http://localhost:1234/register', {
+    const res = await fetch('http://https://mycalenderbackend.onrender.com/register', {
         method: 'POST',
         body: JSON.stringify(details),
         headers: {

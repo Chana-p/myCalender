@@ -4,7 +4,7 @@ export const addTaskThunk = createAsyncThunk(
     'addTask', 
     async ({ details, Id }) => {
         console.log(details.date);
-        const res = await fetch(`http://localhost:1234/task/${Id}`, {
+        const res = await fetch(`http://https://mycalenderbackend.onrender.com/task/${Id}`, {
             method: 'POST',
             body: JSON.stringify(details),
             headers: {

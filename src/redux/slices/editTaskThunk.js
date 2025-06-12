@@ -5,7 +5,7 @@ export const editTaskThunk = createAsyncThunk(
     async ({ details,token, meetingId }) => {
             console.log(details);
             
-        const res = await fetch(`http://localhost:1234/task/${token}/${meetingId}`, {
+        const res = await fetch(`http://https://mycalenderbackend.onrender.com/task/${token}/${meetingId}`, {
             method: 'PUT',
             body: JSON.stringify(details),
             headers: {

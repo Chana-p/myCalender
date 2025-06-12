@@ -5,7 +5,7 @@ export const searchmeetingThunk = createAsyncThunk(
    async ({token,date,text }) => {
       console.log("token"+token+"date"+date+"text"+text);
        
-       const res = await fetch(`http://localhost:1234/meeting/${token}/search?date=${date}&text=${text}`);
+       const res = await fetch(`http://https://mycalenderbackend.onrender.com/meeting/${token}/search?date=${date}&text=${text}`);
 
        if (res.ok) {
            const data = await res.json();
