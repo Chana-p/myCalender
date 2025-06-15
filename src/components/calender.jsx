@@ -131,7 +131,7 @@ const getmeetingss =() =>{
         navigate(`search`);
     }
     const month =() =>{
-        navigate(`../`);
+        navigate(`../Month`);
     }
      const hebrewDate = (d) => {
             const today = new HDate(new Date(d));

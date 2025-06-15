@@ -6,7 +6,9 @@
     "@hebcal/core": "^5.9.0",
     "@reduxjs/toolkit": "^2.5.1",
     "cra-template": "1.2.0",
+    "framer-motion": "^12.18.1",
     "hebrew-date": "^1.0.6",
+    "lucide-react": "^0.515.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
@@ -37,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@welldone-software/why-did-you-render": "^10.0.1"
   }
 }
