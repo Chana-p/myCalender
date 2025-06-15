@@ -5,7 +5,6 @@ import { getmeetingsThunk } from "../redux/slices/getMeetingsThunk";
 import { deletemeetingThunk } from "../redux/slices/deleteMeetingThunk";
 import { HDate } from "@hebcal/core";
 import { gettasksThunk } from "../redux/slices/getTasksThunk";
-import './Month.css';
 export const Month = () => {
 
     const dayOfWeek = ["sunday", "monday", "tuesday", "wedensday", "thursday", "friday", "shabbat"];
