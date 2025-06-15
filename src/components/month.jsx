@@ -5,7 +5,7 @@ import { getmeetingsThunk } from "../redux/slices/getMeetingsThunk";
 import { deletemeetingThunk } from "../redux/slices/deleteMeetingThunk";
 import { HDate } from "@hebcal/core";
 import { gettasksThunk } from "../redux/slices/getTasksThunk";
-
+import './Month.css';
 export const Month = () => {
 
     const dayOfWeek = ["sunday", "monday", "tuesday", "wedensday", "thursday", "friday", "shabbat"];
@@ -25,9 +25,8 @@ export const Month = () => {
     const meetings = useSelector(state => state.meetings.meetings);    
     const tasks = useSelector(state => state.tasks.tasks);    
     const dispatch = useDispatch()
-   //איך מגיעים לשם החודש הנוכחי עבור הכותרת
     const options = { month: 'long' }; // פורמט של שם החודש
-    const monthName = date.toLocaleString('english', options); // שם החודש 
+    const monthName = date.toLocaleString('English', options); // שם החודש 
     const rightClick = (e) => {
         setX(e.clientX);
         setY(e.clientY);
@@ -216,8 +215,8 @@ console.log(tasks);
             <button onClick={() =>newPatient()} >New meeting</button>
             <button onClick={() =>newTask()} >new task</button>
             <button onClick={() => today()}>Go to Today</button>
-            <button onClick={() => left()}>◀</button>
-            <button onClick={() => right()}>▶</button>
+            <button style={{width:"20px"}} onClick={() => right()}>▶</button>
+            <button style={{width:"20px"}} onClick={() => left()}>◀</button>
             <button onClick={() => search()}>Search meeting</button>
             <button onClick={() => toWeekCalender()}>Week Calender</button>
         </div>
@@ -229,11 +228,10 @@ console.log(tasks);
                     flexWrap: " wrap",
                     }} >
                     {dayOfWeek.map((d) => <th style={{
-                        border: "3px solid crimson",
                         height: "4vh",
-                        width: "12%",
+                        width: "14%",
                         fontSize: "15px",
-                        margin: "3px"
+                        margin: "0.12%"
                     }}>{d}</th>)}
                 </tr></thead>
             <tbody className="month">

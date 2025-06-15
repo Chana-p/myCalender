@@ -156,8 +156,8 @@ const getmeetingss =() =>{
             <div></div>
             <button onClick={() =>   newPatient()} >New meeting</button>
             <button onClick={() => today()}>Go to Today</button>
-            <button onClick={() => left()}>◀</button>
-            <button onClick={() => right()}>▶</button>
+                       <button style={{width:"20px"}} onClick={() => right()}>▶</button>
+                        <button style={{width:"20px"}} onClick={() => left()}>◀</button>
             <button onClick={()=>search()}>Search meeting</button>
             <button onClick={()=>month()}>Month Calender</button>
         </div>

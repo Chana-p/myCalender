@@ -27,6 +27,33 @@ if (process.env.NODE_ENV === 'development') {
     trackAllPureComponents: true,
   });
 }
+// פונקציה לעורר את השרת
+async function wakeUpServer() {
+    const serverUrl = 'https://myCalenderBackend.onrender.com'; 
+    
+    try {
+        console.log('מעיר את השרת...');
+        const response = await fetch(`${serverUrl}/wake-up`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            console.log('השרת התעורר בהצלחה');
+        }
+    } catch (error) {
+        console.log('השרת עדיין מתעורר...', error.message);
+    }
+}
+
+// הפעלה מיידית כשהדף נטען
+document.addEventListener('DOMContentLoaded', wakeUpServer);
+
+// אפשרות נוספת - הפעלה כשהחלון נטען
+window.addEventListener('load', wakeUpServer);
+
 const Welcome = ({ onLogin, onRegister, onSystemAccess }) => {
     const navigate = useNavigate();
     const token = useSelector(state => state.user.token);
@@ -89,7 +116,7 @@ const Welcome = ({ onLogin, onRegister, onSystemAccess }) => {
     useEffect(() => {
         if (token && token !== -1) {
             setShowLoginModal(false);
-            navigate('/calendar');
+            navigate('/');
         }
     }, [token, navigate]);
 
@@ -118,7 +145,7 @@ const Welcome = ({ onLogin, onRegister, onSystemAccess }) => {
     };
 
     const handleSystemAccess = () => {
-        navigate('/calendar');
+        navigate('/calender');
     };
 
     // 🔥 פונקציות פשוטות לטיפול במודלים

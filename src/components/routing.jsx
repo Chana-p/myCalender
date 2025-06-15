@@ -15,15 +15,15 @@ export const Routing = () => {
         <>
             <Routes>
                 <Route path="/" element={<WelcomeWrapper />} />
-                <Route path="/calendar" element={<Calender />} />
+                <Route path="/calender" element={<Calender />} />
                 <Route path="/login" element={<Login />} />
                 <Route path='/newUser' element={<NewUser />} />
                 <Route path='/search' element={<SearchMeeting />} />
-                <Route path='/calendar/newPatient' element={<NewPatient />} />
-                <Route path='/calendar/newPatient/:month/:day/:year' element={<NewPatient />} />
-                <Route path='/calendar/edit/:meetingId' element={<EditMeeting />} />
-                <Route path='/calendar/search' element={<SearchMeeting />} />
-                <Route path="/calendar/addTask" element={<Task />} />
+                <Route path='/calender/newPatient' element={<NewPatient />} />
+                <Route path='/calender/newPatient/:month/:day/:year' element={<NewPatient />} />
+                <Route path='/calender/edit/:meetingId' element={<EditMeeting />} />
+                <Route path='/calender/search' element={<SearchMeeting />} />
+                <Route path="/calender/addTask" element={<Task />} />
                 <Route path="/Month" element={<Month />} />
                <Route path='/Month/newPatient' element={<NewPatient />} />
                 <Route path='/Month/newPatient/:month/:day/:year' element={<NewPatient />} />
