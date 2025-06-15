@@ -21,9 +21,9 @@ export const Month = () => {
     const [thisDay, setThisDay] = useState(new Date())
     const navigate = useNavigate();
     const token = useSelector(state => state.user.token);
-    const meetings = useSelector(state => state.meetings.meetings);    
-    const tasks = useSelector(state => state.tasks.tasks);    
-    const dispatch = useDispatch()
+    const meetings = useSelector(state => state.meetings.meetings);
+    const tasks = useSelector(state => state.tasks.tasks);
+    const dispatch = useDispatch();
     const options = { month: 'long' }; // פורמט של שם החודש
     const monthName = date.toLocaleString('English', options); // שם החודש 
     const rightClick = (e) => {
@@ -45,8 +45,8 @@ export const Month = () => {
         myDate();
         getmeetingss();
         getTasks();
-console.log("tasks");
-console.log(tasks);
+        console.log("tasks");
+        console.log(tasks);
 
         window.addEventListener('contextmenu', rightClick);
         window.addEventListener('click', Click);
@@ -61,7 +61,7 @@ console.log(tasks);
         if (isNaN(meetingId)) {
             console.error('Invalid meetingId:', token);
         } else {
-            dispatch(getmeetingsThunk({Id:meetingId}));
+            dispatch(getmeetingsThunk({ Id: meetingId }));
         }
     }
     const getTasks = () => {
@@ -69,7 +69,7 @@ console.log(tasks);
         if (isNaN(Id)) {
             console.error('Invalid Id:', token);
         } else {
-            dispatch(gettasksThunk({Id}));
+            dispatch(gettasksThunk({ Id }));
         }
     }
     const myDate = () => {
@@ -77,16 +77,17 @@ console.log(tasks);
         const str = date.toDateString();
         let localMonth = [];
         let fromSundayBeforeMonth = 8 - (Math.abs(date.getDate() - date.getDay())) % 7;
-      
-        
+
+
         if (date.getDate() < 7) {
             fromSundayBeforeMonth = (date.getDay() - date.getDate() + 1);
-             if (date.getDay() <date.getDate()) {
-                fromSundayBeforeMonth = 8 - (date.getDate() - date.getDay());}
+            if (date.getDay() < date.getDate()) {
+                fromSundayBeforeMonth = 8 - (date.getDate() - date.getDay());
+            }
         }
         console.log("fromSundayBeforeMonth");
         console.log(fromSundayBeforeMonth);
-        let firstOnCalender = 1+(date.getDate()) - (thisDay + fromSundayBeforeMonth);
+        let firstOnCalender = 1 + (date.getDate()) - (thisDay + fromSundayBeforeMonth);
         let endOfCalender = 7;
         //תחילת השבוע שלפני החודש הנוכחי 
         if (fromSundayBeforeMonth < 7) {
@@ -166,7 +167,7 @@ console.log(tasks);
             const day = String(date.getDate()).padStart(2, '0');
             const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
             const year = date.getFullYear();
-            
+
             return `${month}/${day}/${year}`;
         };
         f = formatDate(f);
@@ -199,7 +200,7 @@ console.log(tasks);
 
         {menu && <div
             style={{ position: "absolute", top: y, left: x, backgroundColor: "teal", fontSize: "5px" }}>
-            <button className='menuButton' onClick={() =>newPatientInDay()}>New meeting</button>
+            <button className='menuButton' onClick={() => newPatientInDay()}>New meeting</button>
             <br />
             <button className='menuButton' onClick={() => today()}>Go to Today</button>
         </div>}
@@ -211,22 +212,22 @@ console.log(tasks);
         </div>}
         <div className="buttons"  >
             <div></div>
-            <button onClick={() =>newPatient()} >New meeting</button>
-            <button onClick={() =>newTask()} >new task</button>
+            <button onClick={() => newPatient()} >New meeting</button>
+            <button onClick={() => newTask()} >new task</button>
             <button onClick={() => today()}>Go to Today</button>
-            <button style={{width:"20px"}} onClick={() => right()}>▶</button>
-            <button style={{width:"20px"}} onClick={() => left()}>◀</button>
+            <button style={{ width: "20px" }} onClick={() => right()}>▶</button>
+            <button style={{ width: "20px" }} onClick={() => left()}>◀</button>
             <button onClick={() => search()}>Search meeting</button>
             <button onClick={() => toWeekCalender()}>Week Calender</button>
         </div>
         <h1> {monthName}</h1>
-         <table style={{width:"100%"}} >
+        <table style={{ width: "100%" }} >
             <thead>
                 <tr style={{
-                    display:"flex",
+                    display: "flex",
                     flexWrap: " wrap",
-                    }} >
-                    {dayOfWeek.map((d) => <th style={{
+                }} >
+                    {dayOfWeek.map((d, index) => <th key={index} style={{
                         height: "4vh",
                         width: "14%",
                         fontSize: "15px",
@@ -238,33 +239,33 @@ console.log(tasks);
                     display: "flex",
                     flexWrap: " wrap"
                 }} >
-                    {month.map((d) => <td onContextMenu={() => setThisDay(d)} className={`${d === (new Date()).toDateString() ? "today" : "notToday"} ${"dayOfMonth"}`}  >
+                    {month.map((d, index) => <td key={index} onContextMenu={() => setThisDay(d)} className={`${d === (new Date()).toDateString() ? "today" : "notToday"} ${"dayOfMonth"}`}  >
                         {d}
                         <br />
-                    {  hebrewDate(d)}
-                        {meetings && <>
-                            {meetings.filter(e => new Date(e.date).toDateString() === d).map(g => <div className='meetingOnMonthDay' onContextMenu={() => {
+                        {hebrewDate(d)}
+                        {meetings && meetings.filter(e => new Date(e.date).toDateString() === d)
+                            .map((g, meetingIndex) => <div key={meetingIndex} className='meetingOnMonthDay' onContextMenu={() => {
                                 setmeetingToEdit(g);
                                 setmeetingToEditId(g.id);
                                 setmenumeeting(true);
                             }}>
-                         {g.number}/{g.sumOfMeetings} {g.name}  {g.time} 
-                            </div>
+                                {g.number}/{g.sumOfMeetings} {g.name}  {g.time}
+                            </div>)
 
-                            )}</>}
-                             {tasks && <>
-                            {tasks.filter(e => new Date(e.date).toDateString() === d).map(g => <div className='taskOnMonthDay' onContextMenu={() => {
+                            }
+                        {tasks && tasks.filter(e => new Date(e.date).toDateString() === d)
+                            .map((g, taskIndex) => <div key={taskIndex} className='taskOnMonthDay' onContextMenu={() => {
                                 setTaskToEdit(g);
                                 setTaskToEditId(g.id);
                                 setmenumeeting(true);
                             }}>
-                        {(g.finished) && <span>✔</span>} {g.name}-{g.taskName}
+                                {(g.finished) && <span>✔</span>} {g.name}-{g.taskName}
                             </div>
 
-                            )}</>}
+                            )}
                     </td>)}
                 </tr>
             </tbody>
-        </table> 
+        </table>
     </div>
 }
